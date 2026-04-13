@@ -1,30 +1,30 @@
 // Listas de imágenes
 const listaCabezas = [
   "assets/img/cabeza1.jpg",
-  "base-bestiario/assets/img/cabeza2.jpg",
-  "base-bestiario/assets/img/cabeza3.jpg",
+  "assets/img/cabeza2.jpg",
+  "assets/img/cabeza3.jpg",
 ];
 const listaTroncos = [
- "base-bestiario/assets/img/torso1.jpg",
-  "base-bestiario/assets/img/torso2.jpg",
-  "base-bestiario/assets/img/torso3.jpg",
+ "assets/img/torso1.jpg",
+  "assets/img/torso2.jpg",
+  "assets/img/torso3.jpg",
 ];
 const listaPatas = [
-  "base-bestiario/assets/img/patas1.jpg",
-  "base-bestiario/assets/img/patas2.jpg",
-  "base-bestiario/assets/img/patas3.png",
+  "assets/img/pies1.jpg",
+  "assets/img/pies2.jpg",
+  "assets/img/pies3.jpg",
 ];
 
 // Obtenemos los contenedores de las imágenes del HTML usando los IDs
 const cabeza = document.getElementById("cabeza");
-const tronco = document.getElementById("tronco");
-const patas = document.getElementById("patas");
+const torso = document.getElementById("torso");
+const pies = document.getElementById("pies");
 const boton = document.getElementById("boton");
 
 // Inicializamos las variables de los números aleatorios
 let cabezaAleatorio = 0;
-let troncoAleatorio = 0;
-let patasAleatorio = 0;
+let torsoAleatorio = 0;
+let piesAleatorio = 0;
 
 // Función para generar un número aleatorio entre dos valores
 function numeroAleatorio(min, max) {
@@ -34,15 +34,15 @@ function numeroAleatorio(min, max) {
 // Función para crear una nueva bestia con tres imágenes elegidas aleatoriamente
 function generarBestia() {
   cabezaAleatorio = numeroAleatorio(0, listaCabezas.length);
-  troncoAleatorio = numeroAleatorio(0, listaTroncos.length);
-  patasAleatorio = numeroAleatorio(0, listaPatas.length);
+  torsoAleatorio = numeroAleatorio(0, listaTroncos.length);
+  piesAleatorio = numeroAleatorio(0, listaPatas.length);
 
   // Asignamos la nueva fuente (source) a cada imagen
   cabeza.src = `${listaCabezas[cabezaAleatorio]}`; //ruta + listaCabezas[cabezaAleatorio];
-  tronco.src = `${listaTroncos[troncoAleatorio]}`;
-  patas.src = `${listaPatas[patasAleatorio]}`;
+  torso.src = `${listaTroncos[torsoAleatorio]}`;
+  pies.src = `${listaPatas[piesAleatorio]}`;
 
-  console.log(cabezaAleatorio, troncoAleatorio, patasAleatorio);
+  console.log(cabezaAleatorio, torsoAleatorio, piesAleatorio);
 }
 
 // Generamos un nuevo collage cada vez que hacemos click en el botón "mezclar"
@@ -51,3 +51,9 @@ boton.addEventListener("click", function () {
 });
 
 generarBestia();
+
+document.addEventListener("DOMContentLoaded", function () {
+  generarBestia();
+  boton.addEventListener("click", generarBestia);
+});
+console.log(cabeza, torso, pies, boton);
