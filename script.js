@@ -20,7 +20,6 @@ const cabeza = document.getElementById("cabeza");
 const torso = document.getElementById("torso");
 const pies = document.getElementById("pies");
 const boton = document.getElementById("boton");
-
 // Inicializamos las variables de los números aleatorios
 let cabezaAleatorio = 0;
 let torsoAleatorio = 0;
@@ -57,3 +56,11 @@ document.addEventListener("DOMContentLoaded", function () {
   boton.addEventListener("click", generarBestia);
 });
 console.log(cabeza, torso, pies, boton);
+
+let nombre= prompt("Cúal es tu nombre")
+alert('Saludos,${nombre}!');
+
+saludo.innerText="";
+
+generarPrediccion();
+

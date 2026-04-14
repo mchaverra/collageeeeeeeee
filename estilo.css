@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Barriecito&display=swap');
-
+body {
+    background-color: darkseagreen
+}
 
 html {
   box-sizing: border-box;
@@ -64,4 +66,12 @@ a, a:active, a:visited, a:hover {
   background-color:  rgb(193, 120, 199);
   color: white;
   cursor: pointer;
+}
+
+.foto {
+    position: absolute;
+    left: 100px;
+    top: 300px;
+    transform: translateY(-50%);
+    width: 250px;
 }
