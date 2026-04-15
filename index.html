@@ -1,55 +1,33 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="/favicon.ico" sizes="any" />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <link rel="manifest" href="/sitio.webmanifest" />
-
     <title>..:: Collage ::..</title>
-    <!-- <meta name="description" content="Descripción del sitio...." /> -->
-
-    <!-- OpenGraph -->
-    <meta property="og:locale" content="es_CO" />
-    <meta property="og:type" content="website" />
-    <!-- Esto importa la hoja de estilos de la página -->
-    <link rel="stylesheet" href="estilo.css" />​
-
-    <!-- Esto importa el archivo de JavaScript de la página -->
+    <link rel="stylesheet" href="estilo.css" />
     <script src="script.js" defer></script>
-  </head>
-  <body>
+</head>
+<body>
     <div id="contenedorGeneral">
-      <h1 id="tituloPagina">
-        <a href="https://en.wikipedia.org/wiki/Bestiario" target="_blank"
-          >GWAX</a
-        >
-      </h1>
-      <div id="contenedorPersonaje">
-        <img
-          class="imagen"
-          id="cabeza"
-          src=""
-        />
-        <img
-          class="imagen"
-          id="torso"
-          src=""
-        />
-        <img
-          class="imagen"
-          id="pies"
-          src=""
-        />
-        <div class="imagenes">
-    <img src="assets/img/fotoooooooooo.png" class="foto">
-        </div>
-      </div>
+        <h1 id="tituloPagina">
+            <a href="https://en.wikipedia.org/wiki/Bestiario" target="_blank">GWAX</a>
+        </h1>
+        
+        <div id="layout-collage">
+            <div id="collageIzquierda">
+                <img id="capaFondo" src="assets/img/rio.jpg">
+                <img src="assets/img/fotoooooooooo.png" class="fotoEstática">
+            </div>
 
-      <button id="boton">Mezclar</button>
+            <div id="contenedorPersonaje">
+                <img class="imagen" id="cabeza" src="" />
+                <img class="imagen" id="torso" src="" />
+                <img class="imagen" id="pies" src="" />
+            </div>
+        </div>
+
+        <button id="boton">Mezclar todo</button>
+        <p id="saludo"></p>
     </div>
-    <p id="saludo"></p>
-  </body>
+</body>
 </html>

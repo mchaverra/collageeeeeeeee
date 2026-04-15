@@ -1,66 +1,41 @@
-// Listas de imágenes
-const listaCabezas = [
-  "assets/img/cabeza1.jpg",
-  "assets/img/cabeza2.jpg",
-  "assets/img/cabeza3.jpg",
-];
-const listaTroncos = [
- "assets/img/torso1.jpg",
-  "assets/img/torso2.jpg",
-  "assets/img/torso3.jpg",
-];
-const listaPatas = [
-  "assets/img/pies1.jpg",
-  "assets/img/pies2.jpg",
-  "assets/img/pies3.jpg",
-];
 
-// Obtenemos los contenedores de las imágenes del HTML usando los IDs
+const listaCabezas = ["assets/img/cabeza1.jpg", "assets/img/cabeza2.jpg", "assets/img/cabeza3.jpg"];
+const listaTroncos = ["assets/img/torso1.jpg", "assets/img/torso2.jpg", "assets/img/torso3.jpg"];
+const listaPatas = ["assets/img/pies1.jpg", "assets/img/pies2.jpg", "assets/img/pies3.jpg"];
+const listaPaisajes = ["assets/img/rio.jpg", "assets/img/rioenoil.jpg", "assets/img/papelperiodico.jpg","assets/img/Eyes.jpg"];
+
+
 const cabeza = document.getElementById("cabeza");
 const torso = document.getElementById("torso");
 const pies = document.getElementById("pies");
+const capaFondo = document.getElementById("capaFondo");
 const boton = document.getElementById("boton");
-// Inicializamos las variables de los números aleatorios
-let cabezaAleatorio = 0;
-let torsoAleatorio = 0;
-let piesAleatorio = 0;
+const saludo = document.getElementById("saludo");
 
-// Función para generar un número aleatorio entre dos valores
+
 function numeroAleatorio(min, max) {
-  return Math.floor(Math.random() * (max - min) + min);
+    return Math.floor(Math.random() * (max - min) + min);
 }
 
-// Función para crear una nueva bestia con tres imágenes elegidas aleatoriamente
-function generarBestia() {
-  cabezaAleatorio = numeroAleatorio(0, listaCabezas.length);
-  torsoAleatorio = numeroAleatorio(0, listaTroncos.length);
-  piesAleatorio = numeroAleatorio(0, listaPatas.length);
 
-  // Asignamos la nueva fuente (source) a cada imagen
-  cabeza.src = `${listaCabezas[cabezaAleatorio]}`; //ruta + listaCabezas[cabezaAleatorio];
-  torso.src = `${listaTroncos[torsoAleatorio]}`;
-  pies.src = `${listaPatas[piesAleatorio]}`;
+function generarTodo() {
 
-  console.log(cabezaAleatorio, torsoAleatorio, piesAleatorio);
+    cabeza.src = listaCabezas[numeroAleatorio(0, listaCabezas.length)];
+    torso.src = listaTroncos[numeroAleatorio(0, listaTroncos.length)];
+    pies.src = listaPatas[numeroAleatorio(0, listaPatas.length)];
+
+
+    const nuevoFondo = listaPaisajes[numeroAleatorio(0, listaPaisajes.length)];
+    capaFondo.src = nuevoFondo;
+
+    console.log("¡Mezcla total realizada!");
 }
 
-// Generamos un nuevo collage cada vez que hacemos click en el botón "mezclar"
-boton.addEventListener("click", function () {
-  generarBestia();
-});
 
-generarBestia();
+boton.addEventListener("click", generarTodo);
 
-document.addEventListener("DOMContentLoaded", function () {
-  generarBestia();
-  boton.addEventListener("click", generarBestia);
-});
-console.log(cabeza, torso, pies, boton);
-
-let nombre= prompt("Cúal es tu nombre")
-alert('Saludos,${nombre}!');
-
-saludo.innerText="";
-
-generarPrediccion();
-
+let nombre = prompt("¿Como te llamas?");
+if (nombre) {
+    saludo.innerText = `holaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa, ${nombre}`;
+}
+generarTodo();

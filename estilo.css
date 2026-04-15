@@ -1,77 +1,81 @@
 @import url('https://fonts.googleapis.com/css2?family=Barriecito&display=swap');
+
 body {
-    background-color: darkseagreen
-}
-
-html {
-  box-sizing: border-box;
-  height: 100%;
-}
-
-html,
-body {
-  margin: 0;
-  padding: 0;
-}
-
-::selection {
-  background-color: #30cac073;
-  color: #130808;
-}
-
-h2 {
-  font-size: 1.1em;
-  
-}
-
-a, a:active, a:visited, a:hover {
-  color: rgb(193, 120, 199);
-  cursor: pointer;
-  text-decoration: none;
+    background-color: darkseagreen;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
 }
 
 #contenedorGeneral {
-  margin: auto 1em;
-  text-align: center;
+    text-align: center;
+    padding: 2em;
 }
 
 #tituloPagina {
-  margin-top: 1em;
-  margin-bottom: 0;
-  margin-bottom: 0.5em;
-  font-family: "Barriecito", system-ui;
-  font-weight: 400;
-  font-style: normal;
+    font-family: "Barriecito", system-ui;
+    font-size: 4em;
+    color: rgb(255, 255, 255);
 }
 
-#tituloPagina:hover {
-  color: pink;
-  cursor: pointer;
+#layout-collage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px; 
+    margin: 20px auto;
+}
+
+
+#collageIzquierda {
+    position: relative;
+    width: 250px;
+    height: 350px;
+}
+
+#capaFondo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.fotoEstática {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    pointer-events: none;
 }
 
 #contenedorPersonaje {
-  display: flex;
-  flex-direction: column;
-  align-items: space-around;
+    display: flex;
+    flex-direction: column;
 }
 
 .imagen {
-  height: 170px;
-  width: 150px;
-  margin: 0em auto;
+    height: 170px;
+    width: 150px;
+    display: block;
 }
 
 #boton {
-  font-size: 0.9em;
-  background-color:  rgb(193, 120, 199);
-  color: white;
-  cursor: pointer;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    background-color: rgb(193, 120, 199);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
 }
 
-.foto {
-    position: absolute;
-    left: 100px;
-    top: 300px;
-    transform: translateY(-50%);
-    width: 250px;
+#boton:hover {
+    background-color: pink;
+}
+
+#saludo {
+    margin-top: 20px;
+    font-weight: bold;
 }
